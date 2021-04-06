@@ -1,0 +1,12 @@
+jar包也是一种压缩包 只不过这次压缩的可以让编译器 提取到内置的函数 插件
+在Spring Boot中 包含了一系列的依赖  依赖的版本已经被相互声明好了 不需要用户去说明版本号
+starter   类似于函数声明 声明完成之后 就不需要复制（函数内容） 之间用（函数即可）
+
+主启动类 所在的包 就是 扫描器的默认包 //主启动类 一般是放在被扫描类的上层
+SpringBootApplication 注解一般放在 主启动类上层
+
+SpringBootConfiguration  起到了 配置类的作用  主启动类算是配置类的一种
+解析主启动类 获取到上层的包 把包作为扫描器的basepage 以bean定义的方式注册到容器内
+配置类：
+EnableAutoConfiguration：自动配置类 
+@Import 将Import(类)  包含的bean导入到@Import所对应的bean内 bean的定义的导入 注册
